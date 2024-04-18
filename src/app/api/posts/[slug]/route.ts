@@ -1,7 +1,7 @@
 import { ContextParams } from '@/types';
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 
-export async function POST(request: string, context: ContextParams) {
+export async function POST(request: NextRequest, context: ContextParams) {
   const { params } = context;
   const { slug } = params;
 
