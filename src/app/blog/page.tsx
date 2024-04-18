@@ -1,12 +1,14 @@
+import { getDomainURL } from '../lib/getDomainURL';
+
 async function getData() {
-  // const endpoint = 'http://localhost:3000/api/post/';
-  // const res = await fetch(endpoint, { cache: 'no-store' });
-  // if (!res.ok) {
-  //   throw new Error('Failed to fetch data');
-  // }
-  // const myData = await res.json();
-  // return myData;
-  return { items: [{ id: 1, title: 'foo' }] };
+  const domain = getDomainURL();
+  const endpoint = `${domain}/api/posts/`;
+  const res = await fetch(endpoint, { cache: 'no-store' });
+  if (!res.ok) {
+    throw new Error('Failed to fetch data');
+  }
+  const myData = await res.json();
+  return myData;
 }
 
 export default async function Blog() {
