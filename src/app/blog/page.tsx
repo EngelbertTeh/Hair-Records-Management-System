@@ -1,13 +1,12 @@
-import { Items } from '@/types';
-
-async function getData(): Promise<Items> {
-  const endpoint = 'http://localhost:3000/api/post/';
-  const res = await fetch(endpoint, { cache: 'no-store' });
-  if (!res.ok) {
-    throw new Error('Failed to fetch data');
-  }
-  const myData = await res.json();
-  return myData;
+async function getData() {
+  // const endpoint = 'http://localhost:3000/api/post/';
+  // const res = await fetch(endpoint, { cache: 'no-store' });
+  // if (!res.ok) {
+  //   throw new Error('Failed to fetch data');
+  // }
+  // const myData = await res.json();
+  // return myData;
+  return { items: [{ id: 1, title: 'foo' }] };
 }
 
 export default async function Blog() {
