@@ -6,7 +6,7 @@ type SomeItem = {
   title: string;
 };
 
-let someItem: SomeItem = { id: 1, title: 'Hello World I changed!!!' };
+let someItem: SomeItem = { id: 1, title: 'Hello World' };
 
 export async function GET() {
   return NextResponse.json({ items: [someItem] });

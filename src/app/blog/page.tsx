@@ -1,4 +1,5 @@
 import { getDomainURL } from '../lib/getDomainURL';
+import BlogCard from './card';
 
 async function getData() {
   const domain = getDomainURL();
@@ -21,7 +22,7 @@ export default async function Blog() {
 
       {items &&
         items.map((item, idx) => {
-          return <li key={`post-${idx}`}>{item.title}</li>;
+          return <BlogCard key={`post-${idx}`}>{item.title}</BlogCard>;
         })}
     </main>
   );
