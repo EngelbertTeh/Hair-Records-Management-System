@@ -3,7 +3,7 @@ import { getDomainURL } from '../lib/getDomainURL';
 async function getData() {
   const domain = getDomainURL();
   const endpoint = `${domain}/api/posts/`;
-  const res = await fetch(endpoint, { cache: 'no-store' });
+  const res = await fetch(endpoint, { next: { tags: ['posts'] } });
   if (!res.ok) {
     throw new Error('Failed to fetch data');
   }
