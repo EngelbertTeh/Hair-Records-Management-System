@@ -12,8 +12,8 @@ export async function GET() {
   return NextResponse.json({ items: [someItem] });
 }
 
-export async function POST() {
-  // post some items
-  revalidatePosts();
-  return NextResponse.json({ status: 201 });
-}
+// export async function POST() {
+//   // post some items
+//   revalidatePosts();
+//   return NextResponse.json({ status: 201 });
+// }
