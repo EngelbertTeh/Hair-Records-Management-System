@@ -1,4 +1,3 @@
-import revalidatePosts from '@/app/actions';
 import { NextResponse } from 'next/server';
 
 type SomeItem = {
