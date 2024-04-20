@@ -7,3 +7,5 @@ export async function POST(request: NextRequest, context: ContextParams) {
 
   return NextResponse.json({ slug });
 }
+
+
