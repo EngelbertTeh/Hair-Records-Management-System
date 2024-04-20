@@ -7,7 +7,7 @@ export default function Card({ children }: { children?: ReactNode }) {
 
   function handleClick(
     e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>
-  ) {
+  ): void {
     setCount((prev) => prev + 1);
   }
 
