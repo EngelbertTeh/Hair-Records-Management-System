@@ -1,4 +1,3 @@
-import { helloWorld } from '../lib/db';
 import { getDomainURL } from '../lib/getDomainURL';
 import BlogCard from './card';
 
@@ -14,14 +13,13 @@ async function getData() {
 }
 
 export default async function Blog() {
-  const dbHello = await helloWorld();
+  // const dbHello = await helloWorld();
   const data = await getData();
   const items = data && data.items ? [...data.items] : [];
   return (
     <main>
       <h1>Hello world</h1>
       <p>Posts: </p>
-      <p>DB Response: {JSON.stringify(dbHello)}</p>
       {items &&
         items.map((item, idx) => {
           return <BlogCard key={`post-${idx}`}>{item.title}</BlogCard>;
