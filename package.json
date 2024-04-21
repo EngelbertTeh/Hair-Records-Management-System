@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "build-start": "next build && next start",
-    "db:generate": "drizzle-kit generate:pg --schema src/app/lib/schema.ts --out ./drizzle",
+    "db:generate": "drizzle-kit generate:pg --schema src/app/lib/schema.ts --out ./src/migrations",
     "db:migrate": "tsx ./src/app/lib/dbInit.ts"
   },
   "dependencies": {
