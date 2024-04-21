@@ -4,3 +4,4 @@ export function getDomainURL() {
   const domain = process.env.NEXT_PUBLIC_VERCEL_URL ?? 'localhost:3000';
   return `${protocol}://${domain}`;
 }
+

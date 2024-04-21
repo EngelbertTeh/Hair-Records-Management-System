@@ -1,6 +1,6 @@
 {
-  "id": "c3791ed5-32f2-47af-8ba8-131056a37e05",
-  "prevId": "00000000-0000-0000-0000-000000000000",
+  "id": "3578c4cd-ed11-4676-8783-8722f8d27979",
+  "prevId": "cb66e31a-b02f-42d8-801e-0783e13c7c51",
   "version": "5",
   "dialect": "pg",
   "tables": {
@@ -19,6 +19,12 @@
           "type": "text",
           "primaryKey": false,
           "notNull": true
+        },
+        "short": {
+          "name": "short",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": false
         },
         "created_at": {
           "name": "created_at",

@@ -1,0 +1,27 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1713700177429,
+      "tag": "0000_curvy_rachel_grey",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1713701553890,
+      "tag": "0001_smiling_bullseye",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1713701666094,
+      "tag": "0002_perpetual_frog_thor",
+      "breakpoints": true
+    }
+  ]
+}
