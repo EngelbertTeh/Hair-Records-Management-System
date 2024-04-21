@@ -31,4 +31,4 @@ export default async function Blog() {
 }
 
 export const runtime = 'edge';
-const preferredRegion = 'sin1';
+export const preferredRegion = 'sin1';
