@@ -7,14 +7,13 @@ import { migrate } from 'drizzle-orm/neon-http/migrator';
 
 config({ path: '.env.local' }); // ensures env variables are loaded from .env.local
 
+const url = process.env.DATABASE_URL;
+const sql = neon(url || '');
+const db = drizzle(sql);
+
 async function dbInit() {
-  const url = process.env.DATABASE_URL;
-  const sql = neon(url || '');
-
-  const db = drizzle(sql);
-
   try {
-    await migrate(db, { migrationsFolder: 'drizzle' });
+    await migrate(db, { migrationsFolder: 'src/migrations' });
   } catch (err) {
     console.log('Migration unsuccessful to neon db', err);
   }

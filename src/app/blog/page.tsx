@@ -13,6 +13,7 @@ async function getData() {
 }
 
 export default async function Blog() {
+  
   const data = await getData();
   const items = data && data.items ? [...data.items] : [];
   return (
