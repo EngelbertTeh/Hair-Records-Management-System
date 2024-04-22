@@ -11,3 +11,9 @@ export type Item = {
   id: number;
   title: string;
 };
+
+export type Link = {
+  id: number;
+  url: string;
+  created_at: string;
+};

@@ -1,5 +1,12 @@
+import { revalidateLinks } from '@/app/actions';
 import isValidURL from '@/app/lib/isValidURL';
 import { NextRequest, NextResponse } from 'next/server';
+import { addLink, getLinks } from '../../lib/db';
+
+export async function GET() {
+  const data = await getLinks(10, 0);
+  return NextResponse.json(data, { status: 200 });
+}
 
 export async function POST(req: NextRequest) {
   // post some items
@@ -14,8 +21,8 @@ export async function POST(req: NextRequest) {
   }
 
   const data = await req.json();
-  const url = data && data.url ? data.url : null;
-  console.log(url);
+  const url = data?.url;
+
   const isValid =
     url && (await isValidURL(url, [process.env.NEXT_PUBLIC_VERCEL_ENV!]));
   if (!isValid) {
@@ -24,5 +31,8 @@ export async function POST(req: NextRequest) {
       { status: 400 }
     );
   }
+
+  const resp = await addLink(url);
+  revalidateLinks();
   return NextResponse.json(data, { status: 201 });
 }
