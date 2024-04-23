@@ -6,7 +6,11 @@ export default async function isValidURL(
   const disallowedPattern = `^https?:\\/\\/(?:${disallowedDomains.join(
     '|'
   )})\\b`;
+
   let disallowedRegex = new RegExp(disallowedPattern, 'i');
+
+  const noWhitespacePattern = /^\S+$/;
+  let noWhitespaceRegex = new RegExp(noWhitespacePattern);
 
   // Regular expression pattern to match a URL (excluding localhost)
   const urlPattern =
@@ -14,5 +18,9 @@ export default async function isValidURL(
   let urlRegex = new RegExp(urlPattern);
 
   // Test the URL against both URL pattern and disallowed domain pattern
-  return urlRegex.test(url) && !disallowedRegex.test(url);
+  return (
+    urlRegex.test(url) &&
+    !disallowedRegex.test(url) &&
+    noWhitespaceRegex.test(url)
+  );
 }
