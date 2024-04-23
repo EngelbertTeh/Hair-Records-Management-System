@@ -15,5 +15,6 @@ export type Item = {
 export type Link = {
   id: number;
   url: string;
+  short: string;
   created_at: string;
 };

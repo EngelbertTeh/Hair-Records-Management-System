@@ -1,7 +1,9 @@
 import { neon } from '@neondatabase/serverless';
 import { config } from 'dotenv';
+import { desc, eq } from 'drizzle-orm';
 import { drizzle } from 'drizzle-orm/neon-http';
 import { migrate } from 'drizzle-orm/neon-http/migrator';
+import randomShortStrings from './randomShortStrings';
 import { linksTable } from './schema';
 
 // to initialize database run in command line
@@ -24,12 +26,25 @@ async function dbInit() {
 dbInit();
 
 export async function addLink(url: string) {
-  const newLink = { url };
+  const short = randomShortStrings();
+  const newLink = { url, short };
   return await db.insert(linksTable).values(newLink).returning();
 }
 
 export async function getLinks(lookupLimit: number, offset: number) {
-  return await db.select().from(linksTable).limit(lookupLimit).offset(offset);
+  return await db
+    .select()
+    .from(linksTable)
+    .orderBy(desc(linksTable.created_at))
+    .limit(lookupLimit)
+    .offset(offset);
+}
+
+export async function getShortLinkRecord(shortLink: string) {
+  return await db
+    .select()
+    .from(linksTable)
+    .where(eq(linksTable.short, shortLink));
 }
 
 export async function getMinLinks(lookupLimit: number, offset: number) {
