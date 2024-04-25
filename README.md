@@ -23,21 +23,23 @@ Getting Started:
 
   Clone the Repository:
 
-      git clone https://github.com/EngelbertTeh/portfolio-project-3--nextjs.git
+          git clone https://github.com/EngelbertTeh/portfolio-project-3--nextjs.git
     
   Install Dependencies:
 
-    cd .\portfolio-project-3--nextjs\
-    npm install
+          cd .\portfolio-project-3--nextjs\
+          npm install
 
   Running in local host:
   - Create a .env.local file in the root of your project
   - Store this value
-        NEXT_PUBLIC_VERCEL_ENV = development
-        DATABASE_URL =  <Your database connection string>
-   -Run development server
-      
-      npm run dev  // This will start the development server, typically accessible at http://localhost:3000 by default.
+    
+          NEXT_PUBLIC_VERCEL_ENV = development
+          DATABASE_URL =  <Your database connection string>
+    
+   - Run development server
+
+          npm run dev  // This will start the development server, typically accessible at http://localhost:3000 by default.
 
   Hosting in vercel and neon:
   - Create a vercel account
@@ -46,9 +48,10 @@ Getting Started:
 
   - Create a neon account
   - In Vercel, in your project settings, create an environment variable
-  - Store this value 
-            key: DATABASE_URL
-            value: <The connection string neon provides you when you created a database>
+  - Store this value
+    
+          key: DATABASE_URL
+          value: <The connection string neon provides you when you created a database>
     
 
 
