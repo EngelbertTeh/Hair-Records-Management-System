@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is an open source project I am working on.
 
-## Getting Started
+It's a customer hair records system for a hair stylist friend of mine.
 
-First, run the development server:
+Feel free to contribute, or clone it for your own use.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Techstack 
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+      Frontend & Backend Framework: NextJS
+      Server Host: Vercel
+      RDBMS: Postgresql
+      DB Host: Neon
+      Runtime env: Node.js lts version
+      Version control: git
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Extras:
 
-## Learn More
+      GUI to manage postgresql rdbms locally: PGAdmin4
+      
 
-To learn more about Next.js, take a look at the following resources:
+Getting Started:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    Clone the Repository:
+    Bash
+    git clone https://github.com/EngelbertTeh/portfolio-project-3--nextjs.git
+    
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Install Dependencies:
 
-## Deploy on Vercel
+    cd hair-salon-app
+    npm install
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Running in local host:
+
+    Create a .env.local file in the root of your project
+    Store this value
+        NEXT_PUBLIC_VERCEL_ENV = development
+        DATABASE_URL =  <Your database connection string>
+    Bash
+      npm run dev  // This will start the development server, typically accessible at http://localhost:3000 by default.
+
+Hosting in vercel and neon:
+
+    Create a vercel account
+    Push your own project to your own github repo
+    Create a project in vercel and connect it with your github repo
+
+    Create a neon account
+    In Vercel, in your project settings, create an environment variable
+    Store this value 
+            key: DATABASE_URL
+            value: <The connection string neon provides you when you created a database>
+    
+
+
+
