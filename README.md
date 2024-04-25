@@ -23,11 +23,11 @@ Getting Started:
 
   Clone the Repository:
 
-          git clone https://github.com/EngelbertTeh/portfolio-project-3--nextjs.git
+          git clone https://github.com/EngelbertTeh/Hair-Records-Management-System.git
     
   Install Dependencies:
 
-          cd .\portfolio-project-3--nextjs\
+          cd .\Hair-Records-Management-System\
           npm install
 
   Running in local host:
