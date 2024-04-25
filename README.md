@@ -54,9 +54,13 @@ Getting Started:
           value: <The connection string neon provides you when you created a database>
     
 
+
 # ERD
 
-![image](https://github.com/EngelbertTeh/Hair-Records-Management-System/assets/116945412/889f2509-4f1f-45c3-b1f6-c5ce79e5d33c)
+
+![image](https://github.com/EngelbertTeh/Hair-Records-Management-System/assets/116945412/6e3706c2-3103-4bcf-b369-c791159f7148)
+
+
 
 
 
