@@ -57,8 +57,9 @@ Getting Started:
 
 # ERD
 
+![QuickDBD-Free Diagram](https://github.com/EngelbertTeh/Hair-Records-Management-System/assets/116945412/a193daf7-a279-4880-92ea-14776748a9cd)
 
-![image](https://github.com/EngelbertTeh/Hair-Records-Management-System/assets/116945412/6e3706c2-3103-4bcf-b369-c791159f7148)
+
 
 
 
