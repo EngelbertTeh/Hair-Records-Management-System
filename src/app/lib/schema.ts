@@ -10,6 +10,30 @@ import {
   varchar,
 } from 'drizzle-orm/pg-core';
 
+export const textureEnum = pgEnum('texture', ['fine', 'medium', 'thick']);
+
+export const currentHairConditionEnum = pgEnum('current_hair_condition', [
+  'normal',
+  'resistant',
+  'damage',
+  'very damage',
+]);
+
+export const currentScapConditionEnum = pgEnum('current_scalp_condition', [
+  'normal',
+  'dry',
+  'oily',
+  'dandruff',
+  'sensitive',
+]);
+
+export const whiteHairSaturationEnum = pgEnum('white_hair_saturation', [
+  'undetectable',
+  'minimally visible',
+  'moderately visible',
+  'saturated',
+]);
+
 export const linksTable = pgTable(
   'links',
   {
@@ -39,30 +63,6 @@ export const customerTable = pgTable(
     return { nricIndex: uniqueIndex('nric_idx').on(customer.nric) };
   }
 );
-
-const textureEnum = pgEnum('texture', ['fine', 'medium', 'thick']);
-
-const currentHairConditionEnum = pgEnum('current_hair_condition', [
-  'normal',
-  'resistant',
-  'damage',
-  'very damage',
-]);
-
-const currentScapConditionEnum = pgEnum('current_scalp_condition', [
-  'normal',
-  'dry',
-  'oily',
-  'dandruff',
-  'sensitive',
-]);
-
-const whiteHairSaturationEnum = pgEnum('white_hair_saturation', [
-  'undetectable',
-  'minimally visible',
-  'moderately visible',
-  'saturated',
-]);
 
 export const hairDetailTable = pgTable('hair_detail', {
   id: serial('id').primaryKey(),
@@ -134,7 +134,7 @@ export const hairServiceDetailTable = pgTable('hair_service_detail', {
   timestamp: timestamp('timestamp').defaultNow(),
 });
 
-export default variableKeyTable = pgTable('variable_key', {
+export const variableKeyTable = pgTable('variable_key', {
   //id, name varchar15 not null, description varchar 50 not null, timestamp
   id: serial('id').primaryKey(),
   name: varchar('name', { length: 15 }).notNull().unique(),
@@ -147,7 +147,6 @@ export const stylistTable = pgTable('stylist', {
   name: varchar('name', { length: 50 }).notNull().unique(),
   rank: integer('rank').notNull(),
 });
-
 
 export const rankTable = pgTable('rank', {
   id: serial('id').primaryKey(),
