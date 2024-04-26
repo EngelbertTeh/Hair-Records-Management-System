@@ -1,9 +1,378 @@
 {
-  "id": "2dbb682d-b0b0-4e3a-888a-6404dcba4055",
+  "id": "4cd48068-3153-47d6-b1bb-8f581d940735",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "5",
   "dialect": "pg",
   "tables": {
+    "appointment": {
+      "name": "appointment",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "customer_id": {
+          "name": "customer_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "stylist_id": {
+          "name": "stylist_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "remarks": {
+          "name": "remarks",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "appt_date_time": {
+          "name": "appt_date_time",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "timestamp": {
+          "name": "timestamp",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "appointment_customer_id_customer_id_fk": {
+          "name": "appointment_customer_id_customer_id_fk",
+          "tableFrom": "appointment",
+          "tableTo": "customer",
+          "columnsFrom": [
+            "customer_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "appointment_stylist_id_stylist_id_fk": {
+          "name": "appointment_stylist_id_stylist_id_fk",
+          "tableFrom": "appointment",
+          "tableTo": "stylist",
+          "columnsFrom": [
+            "stylist_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "customer": {
+      "name": "customer",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "name": {
+          "name": "name",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "dob": {
+          "name": "dob",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "nric": {
+          "name": "nric",
+          "type": "varchar(12)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "address": {
+          "name": "address",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "hp": {
+          "name": "hp",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "tel": {
+          "name": "tel",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "timestamp": {
+          "name": "timestamp",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "now()"
+        }
+      },
+      "indexes": {
+        "nric_idx": {
+          "name": "nric_idx",
+          "columns": [
+            "nric"
+          ],
+          "isUnique": true
+        }
+      },
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "hair_detail": {
+      "name": "hair_detail",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "customer_id": {
+          "name": "customer_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "natural_base": {
+          "name": "natural_base",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "texture": {
+          "name": "texture",
+          "type": "texture",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "current_hair_condition": {
+          "name": "current_hair_condition",
+          "type": "current_hair_condition",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "current_scalp_condition": {
+          "name": "current_scalp_condition",
+          "type": "current_scalp_condition",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "white_hair_saturation": {
+          "name": "white_hair_saturation",
+          "type": "white_hair_saturation",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "timestamp": {
+          "name": "timestamp",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "hair_detail_customer_id_customer_id_fk": {
+          "name": "hair_detail_customer_id_customer_id_fk",
+          "tableFrom": "hair_detail",
+          "tableTo": "customer",
+          "columnsFrom": [
+            "customer_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "hair_service_detail": {
+      "name": "hair_service_detail",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "service_id": {
+          "name": "service_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "variable_key": {
+          "name": "variable_key",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "value": {
+          "name": "value",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "timestamp": {
+          "name": "timestamp",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "hair_service_detail_service_id_service_type_id_fk": {
+          "name": "hair_service_detail_service_id_service_type_id_fk",
+          "tableFrom": "hair_service_detail",
+          "tableTo": "service_type",
+          "columnsFrom": [
+            "service_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "hair_service_detail_variable_key_variable_key_id_fk": {
+          "name": "hair_service_detail_variable_key_variable_key_id_fk",
+          "tableFrom": "hair_service_detail",
+          "tableTo": "variable_key",
+          "columnsFrom": [
+            "variable_key"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "hair_service": {
+      "name": "hair_service",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "appointment_id": {
+          "name": "appointment_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "service_type": {
+          "name": "service_type",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "payment_type": {
+          "name": "payment_type",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "price": {
+          "name": "price",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "timestamp": {
+          "name": "timestamp",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "hair_service_appointment_id_appointment_id_fk": {
+          "name": "hair_service_appointment_id_appointment_id_fk",
+          "tableFrom": "hair_service",
+          "tableTo": "appointment",
+          "columnsFrom": [
+            "appointment_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "hair_service_service_type_hair_service_detail_id_fk": {
+          "name": "hair_service_service_type_hair_service_detail_id_fk",
+          "tableFrom": "hair_service",
+          "tableTo": "hair_service_detail",
+          "columnsFrom": [
+            "service_type"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "hair_service_payment_type_hair_service_detail_id_fk": {
+          "name": "hair_service_payment_type_hair_service_detail_id_fk",
+          "tableFrom": "hair_service",
+          "tableTo": "hair_service_detail",
+          "columnsFrom": [
+            "payment_type"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
     "links": {
       "name": "links",
       "schema": "",
@@ -34,21 +403,266 @@
           "default": "now()"
         }
       },
+      "indexes": {
+        "url_idx": {
+          "name": "url_idx",
+          "columns": [
+            "url"
+          ],
+          "isUnique": true
+        }
+      },
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "payment_type": {
+      "name": "payment_type",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "name": {
+          "name": "name",
+          "type": "varchar(15)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "description": {
+          "name": "description",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "timestamp": {
+          "name": "timestamp",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "now()"
+        }
+      },
       "indexes": {},
       "foreignKeys": {},
       "compositePrimaryKeys": {},
       "uniqueConstraints": {
-        "url_idx": {
-          "name": "url_idx",
+        "payment_type_name_unique": {
+          "name": "payment_type_name_unique",
           "nullsNotDistinct": false,
           "columns": [
-            "url"
+            "name"
+          ]
+        }
+      }
+    },
+    "rank": {
+      "name": "rank",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "name": {
+          "name": "name",
+          "type": "varchar(25)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "description": {
+          "name": "description",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "timestamp": {
+          "name": "timestamp",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "rank_name_unique": {
+          "name": "rank_name_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "name"
+          ]
+        }
+      }
+    },
+    "service_type": {
+      "name": "service_type",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "name": {
+          "name": "name",
+          "type": "varchar(15)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "description": {
+          "name": "description",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "timestamp": {
+          "name": "timestamp",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "service_type_name_unique": {
+          "name": "service_type_name_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "name"
+          ]
+        }
+      }
+    },
+    "stylist": {
+      "name": "stylist",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "name": {
+          "name": "name",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "rank": {
+          "name": "rank",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "stylist_name_unique": {
+          "name": "stylist_name_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "name"
+          ]
+        }
+      }
+    },
+    "variable_key": {
+      "name": "variable_key",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "name": {
+          "name": "name",
+          "type": "varchar(15)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "description": {
+          "name": "description",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "timestamp": {
+          "name": "timestamp",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "variable_key_name_unique": {
+          "name": "variable_key_name_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "name"
           ]
         }
       }
     }
   },
-  "enums": {},
+  "enums": {
+    "current_hair_condition": {
+      "name": "current_hair_condition",
+      "values": {
+        "normal": "normal",
+        "resistant": "resistant",
+        "damage": "damage",
+        "very damage": "very damage"
+      }
+    },
+    "current_scalp_condition": {
+      "name": "current_scalp_condition",
+      "values": {
+        "normal": "normal",
+        "dry": "dry",
+        "oily": "oily",
+        "dandruff": "dandruff",
+        "sensitive": "sensitive"
+      }
+    },
+    "texture": {
+      "name": "texture",
+      "values": {
+        "fine": "fine",
+        "medium": "medium",
+        "thick": "thick"
+      }
+    },
+    "white_hair_saturation": {
+      "name": "white_hair_saturation",
+      "values": {
+        "undetectable": "undetectable",
+        "minimally visible": "minimally visible",
+        "moderately visible": "moderately visible",
+        "saturated": "saturated"
+      }
+    }
+  },
   "schemas": {},
   "_meta": {
     "columns": {},
