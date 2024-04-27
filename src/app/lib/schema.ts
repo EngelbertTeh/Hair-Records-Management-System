@@ -106,28 +106,25 @@ export const hairServiceTable = pgTable('hair_service', {
 });
 
 export const serviceTypeTable = pgTable('service_type', {
-  // id, name, description length 50, timestamp
   id: serial('id').primaryKey(),
   name: varchar('name', { length: 15 }).notNull().unique(),
-  description: varchar('description', { length: 50 }).notNull(),
+  description: varchar('description', { length: 50 }),
   timestamp: timestamp('timestamp').defaultNow(),
 });
 
 export const paymentTypeTable = pgTable('payment_type', {
-  // id, name, description length 50, timestamp
   id: serial('id').primaryKey(),
   name: varchar('name', { length: 15 }).notNull().unique(),
-  description: varchar('description', { length: 50 }).notNull(),
+  description: varchar('description', { length: 50 }),
   timestamp: timestamp('timestamp').defaultNow(),
 });
 
 export const hairServiceDetailTable = pgTable('hair_service_detail', {
-  //id, service_id, variable_key references variableKeyTable.id, value varchar 50 not null, timestamp
   id: serial('id').primaryKey(),
   service_id: integer('service_id')
     .notNull()
     .references(() => serviceTypeTable.id),
-  variable_key: integer('variable_key')
+  variable_key_id: integer('variable_key_id')
     .notNull()
     .references(() => variableKeyTable.id),
   value: varchar('value', { length: 50 }).notNull(),
@@ -135,10 +132,9 @@ export const hairServiceDetailTable = pgTable('hair_service_detail', {
 });
 
 export const variableKeyTable = pgTable('variable_key', {
-  //id, name varchar15 not null, description varchar 50 not null, timestamp
   id: serial('id').primaryKey(),
   name: varchar('name', { length: 15 }).notNull().unique(),
-  description: varchar('description', { length: 50 }).notNull(),
+  description: varchar('description', { length: 50 }),
   timestamp: timestamp('timestamp').defaultNow(),
 });
 
@@ -148,9 +144,19 @@ export const stylistTable = pgTable('stylist', {
   rank: integer('rank').notNull(),
 });
 
-export const rankTable = pgTable('rank', {
+export const stylistLevelTable = pgTable('stylist_level', {
   id: serial('id').primaryKey(),
   name: varchar('name', { length: 25 }).notNull().unique(),
-  description: varchar('description', { length: 50 }).notNull(),
+  description: varchar('description', { length: 50 }),
   timestamp: timestamp('timestamp').defaultNow(),
 });
+
+//relationship
+// export const hairDetailRelations = relations(hairDetailTable, ({ one }) => {
+//   return {
+//     customer: one(customerTable, {
+//       fields: [hairDetailTable.customer_id],
+//       references: [customerTable.id],
+//     }),
+//   };
+// });

@@ -1,4 +1,4 @@
-import { ContextParams } from '@/types';
+import { ContextParams } from '@/app/lib/types';
 
 export default function BlogPostDetail({ params }: ContextParams) {
   console.log(params);

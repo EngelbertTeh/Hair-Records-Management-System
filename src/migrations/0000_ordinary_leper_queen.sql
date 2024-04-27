@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS "hair_detail" (
 CREATE TABLE IF NOT EXISTS "hair_service_detail" (
 	"id" serial PRIMARY KEY NOT NULL,
 	"service_id" integer NOT NULL,
-	"variable_key" integer NOT NULL,
+	"variable_key_id" integer NOT NULL,
 	"value" varchar(50) NOT NULL,
 	"timestamp" timestamp DEFAULT now()
 );
@@ -80,25 +80,25 @@ CREATE TABLE IF NOT EXISTS "links" (
 CREATE TABLE IF NOT EXISTS "payment_type" (
 	"id" serial PRIMARY KEY NOT NULL,
 	"name" varchar(15) NOT NULL,
-	"description" varchar(50) NOT NULL,
+	"description" varchar(50),
 	"timestamp" timestamp DEFAULT now(),
 	CONSTRAINT "payment_type_name_unique" UNIQUE("name")
-);
---> statement-breakpoint
-CREATE TABLE IF NOT EXISTS "rank" (
-	"id" serial PRIMARY KEY NOT NULL,
-	"name" varchar(25) NOT NULL,
-	"description" varchar(50) NOT NULL,
-	"timestamp" timestamp DEFAULT now(),
-	CONSTRAINT "rank_name_unique" UNIQUE("name")
 );
 --> statement-breakpoint
 CREATE TABLE IF NOT EXISTS "service_type" (
 	"id" serial PRIMARY KEY NOT NULL,
 	"name" varchar(15) NOT NULL,
-	"description" varchar(50) NOT NULL,
+	"description" varchar(50),
 	"timestamp" timestamp DEFAULT now(),
 	CONSTRAINT "service_type_name_unique" UNIQUE("name")
+);
+--> statement-breakpoint
+CREATE TABLE IF NOT EXISTS "stylist_level" (
+	"id" serial PRIMARY KEY NOT NULL,
+	"name" varchar(25) NOT NULL,
+	"description" varchar(50),
+	"timestamp" timestamp DEFAULT now(),
+	CONSTRAINT "stylist_level_name_unique" UNIQUE("name")
 );
 --> statement-breakpoint
 CREATE TABLE IF NOT EXISTS "stylist" (
@@ -111,7 +111,7 @@ CREATE TABLE IF NOT EXISTS "stylist" (
 CREATE TABLE IF NOT EXISTS "variable_key" (
 	"id" serial PRIMARY KEY NOT NULL,
 	"name" varchar(15) NOT NULL,
-	"description" varchar(50) NOT NULL,
+	"description" varchar(50),
 	"timestamp" timestamp DEFAULT now(),
 	CONSTRAINT "variable_key_name_unique" UNIQUE("name")
 );
@@ -143,7 +143,7 @@ EXCEPTION
 END $$;
 --> statement-breakpoint
 DO $$ BEGIN
- ALTER TABLE "hair_service_detail" ADD CONSTRAINT "hair_service_detail_variable_key_variable_key_id_fk" FOREIGN KEY ("variable_key") REFERENCES "variable_key"("id") ON DELETE no action ON UPDATE no action;
+ ALTER TABLE "hair_service_detail" ADD CONSTRAINT "hair_service_detail_variable_key_id_variable_key_id_fk" FOREIGN KEY ("variable_key_id") REFERENCES "variable_key"("id") ON DELETE no action ON UPDATE no action;
 EXCEPTION
  WHEN duplicate_object THEN null;
 END $$;

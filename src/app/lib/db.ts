@@ -2,7 +2,6 @@ import { neon } from '@neondatabase/serverless';
 import { config } from 'dotenv';
 import { desc, eq } from 'drizzle-orm';
 import { drizzle } from 'drizzle-orm/neon-http';
-import { migrate } from 'drizzle-orm/neon-http/migrator';
 import randomShortStrings from './randomShortStrings';
 import { linksTable } from './schema';
 
@@ -14,16 +13,6 @@ config({ path: '.env.local' }); // ensures env variables are loaded from .env.lo
 const dbcs = process.env.DATABASE_URL;
 const sql = neon(dbcs || '');
 const db = drizzle(sql);
-
-async function dbInit() {
-  try {
-    await migrate(db, { migrationsFolder: 'src/migrations' });
-  } catch (err) {
-    console.log('Migration unsuccessful to neon db', err);
-  }
-}
-
-dbInit();
 
 export async function addLink(url: string) {
   const short = randomShortStrings();

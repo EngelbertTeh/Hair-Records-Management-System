@@ -1,5 +1,5 @@
 {
-  "id": "4cd48068-3153-47d6-b1bb-8f581d940735",
+  "id": "224dd209-e1cb-4c50-82d6-82850cb7688b",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "5",
   "dialect": "pg",
@@ -234,8 +234,8 @@
           "primaryKey": false,
           "notNull": true
         },
-        "variable_key": {
-          "name": "variable_key",
+        "variable_key_id": {
+          "name": "variable_key_id",
           "type": "integer",
           "primaryKey": false,
           "notNull": true
@@ -269,12 +269,12 @@
           "onDelete": "no action",
           "onUpdate": "no action"
         },
-        "hair_service_detail_variable_key_variable_key_id_fk": {
-          "name": "hair_service_detail_variable_key_variable_key_id_fk",
+        "hair_service_detail_variable_key_id_variable_key_id_fk": {
+          "name": "hair_service_detail_variable_key_id_variable_key_id_fk",
           "tableFrom": "hair_service_detail",
           "tableTo": "variable_key",
           "columnsFrom": [
-            "variable_key"
+            "variable_key_id"
           ],
           "columnsTo": [
             "id"
@@ -436,7 +436,7 @@
           "name": "description",
           "type": "varchar(50)",
           "primaryKey": false,
-          "notNull": true
+          "notNull": false
         },
         "timestamp": {
           "name": "timestamp",
@@ -452,49 +452,6 @@
       "uniqueConstraints": {
         "payment_type_name_unique": {
           "name": "payment_type_name_unique",
-          "nullsNotDistinct": false,
-          "columns": [
-            "name"
-          ]
-        }
-      }
-    },
-    "rank": {
-      "name": "rank",
-      "schema": "",
-      "columns": {
-        "id": {
-          "name": "id",
-          "type": "serial",
-          "primaryKey": true,
-          "notNull": true
-        },
-        "name": {
-          "name": "name",
-          "type": "varchar(25)",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "description": {
-          "name": "description",
-          "type": "varchar(50)",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "timestamp": {
-          "name": "timestamp",
-          "type": "timestamp",
-          "primaryKey": false,
-          "notNull": false,
-          "default": "now()"
-        }
-      },
-      "indexes": {},
-      "foreignKeys": {},
-      "compositePrimaryKeys": {},
-      "uniqueConstraints": {
-        "rank_name_unique": {
-          "name": "rank_name_unique",
           "nullsNotDistinct": false,
           "columns": [
             "name"
@@ -522,7 +479,7 @@
           "name": "description",
           "type": "varchar(50)",
           "primaryKey": false,
-          "notNull": true
+          "notNull": false
         },
         "timestamp": {
           "name": "timestamp",
@@ -538,6 +495,49 @@
       "uniqueConstraints": {
         "service_type_name_unique": {
           "name": "service_type_name_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "name"
+          ]
+        }
+      }
+    },
+    "stylist_level": {
+      "name": "stylist_level",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "name": {
+          "name": "name",
+          "type": "varchar(25)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "description": {
+          "name": "description",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "timestamp": {
+          "name": "timestamp",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "stylist_level_name_unique": {
+          "name": "stylist_level_name_unique",
           "nullsNotDistinct": false,
           "columns": [
             "name"
@@ -601,7 +601,7 @@
           "name": "description",
           "type": "varchar(50)",
           "primaryKey": false,
-          "notNull": true
+          "notNull": false
         },
         "timestamp": {
           "name": "timestamp",

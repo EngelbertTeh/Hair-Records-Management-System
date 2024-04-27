@@ -1,4 +1,4 @@
-import { ContextParams } from '@/types';
+import { ContextParams } from '@/app/lib/types';
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(request: NextRequest, context: ContextParams) {
@@ -7,5 +7,3 @@ export async function POST(request: NextRequest, context: ContextParams) {
 
   return NextResponse.json({ slug });
 }
-
-

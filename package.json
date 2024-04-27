@@ -9,7 +9,8 @@
     "lint": "next lint",
     "build-start": "next build && next start",
     "add-migrations": "drizzle-kit generate:pg",
-    "update-database": "tsx ./src/app/lib/db.ts"
+    "update-database": "tsx ./src/app/lib/dbInit.ts",
+    "seed-database": "tsx ./src/app/lib/dbSeed.ts"
   },
   "dependencies": {
     "@neondatabase/serverless": "^0.9.1",
