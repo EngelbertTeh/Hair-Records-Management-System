@@ -53,8 +53,13 @@ Getting Started:
           key: DATABASE_URL
           value: <The connection string neon provides you when you created a database>
     
-# WireFrame (In-Progress)
-https://www.figma.com/file/dAjVLaxYjIZM5UVKllmU79/Untitled?type=design&node-id=0%3A1&mode=dev&t=leaMztBPOmlAUxs9-1
+# Screens (In-Progress)
+![images](https://github.com/EngelbertTeh/Hair-Records-Management-System/assets/116945412/95c5505a-c839-4bdb-bc27-9cfa05b12e0e)
+            
+      https://www.figma.com/file/dAjVLaxYjIZM5UVKllmU79/Untitled?type=design&node-id=0%3A1&mode=dev&t=leaMztBPOmlAUxs9-1
+
+
+
 
 # ERD
 
