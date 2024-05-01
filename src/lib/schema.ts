@@ -52,7 +52,7 @@ export const customerTable = pgTable(
   {
     id: serial('id').primaryKey(),
     name: text('name').notNull(),
-    dob: date('dob').notNull(),
+    dob: date('dob'),
     nric: varchar('nric', { length: 12 }),
     address: text('address'),
     hp: varchar('hp', { length: 10 }),

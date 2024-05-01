@@ -1,4 +1,5 @@
-import { getDomainURL } from '../lib/getDomainURL';
+import AppointmentCard from '@/components/card/AppointmentCard';
+import { getDomainURL } from '../../lib/getDomainURL';
 import BlogCard from './card';
 
 async function getData() {
@@ -19,7 +20,9 @@ export default async function Blog() {
     <main>
       <h1>Hello world</h1>
       <p>Posts: </p>
-      {items &&
+      <AppointmentCard />
+      {setTimeout(() => {}, 3000) &&
+        items &&
         items.map((item, idx) => {
           return <BlogCard key={`post-${idx}`}>{item.title}</BlogCard>;
         })}

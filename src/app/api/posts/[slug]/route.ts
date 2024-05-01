@@ -1,4 +1,4 @@
-import { ContextParams } from '@/app/lib/types';
+import { ContextParams } from '@/lib/types';
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(request: NextRequest, context: ContextParams) {

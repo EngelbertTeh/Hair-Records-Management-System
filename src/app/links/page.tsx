@@ -1,4 +1,3 @@
-import LinksCreateForm from './createForm';
 import LinksHTMLTable from './table';
 
 export default function LinksPage() {

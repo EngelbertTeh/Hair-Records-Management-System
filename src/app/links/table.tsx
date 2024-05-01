@@ -1,6 +1,6 @@
 'use client';
 
-import { Link } from '@/app/lib/types';
+import { Link } from '@/lib/types';
 import useSWR from 'swr';
 import LinksCreateForm from './createForm';
 

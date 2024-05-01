@@ -1,6 +1,6 @@
-import isValidURL from '@/app/lib/isValidURL';
+import isValidURL from '@/lib/isValidURL';
 import { NextRequest, NextResponse } from 'next/server';
-import { addLink, getLinks } from '../../lib/db';
+import { addLink, getLinks } from '../../../lib/db';
 
 export async function GET() {
   const data = await getLinks(10, 0);

@@ -1,5 +1,5 @@
 import { RedirectType, notFound, redirect } from 'next/navigation';
-import { getShortLinkRecord } from '../lib/db';
+import { getShortLinkRecord } from '../../lib/db';
 
 export default async function ShortPage({
   params,
