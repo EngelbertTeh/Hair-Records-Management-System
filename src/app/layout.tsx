@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Quicksand, Syncopate } from 'next/font/google';
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
-
+const quickSand = Quicksand({ subsets: ['latin'] });
+const syncopate = Syncopate({ weight: '400', subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Rimix',
   description: '美发沙龙和学院',
@@ -14,9 +14,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  //TODO: Understand NextFont
   return (
     <html lang="en">
-      <body className={`${inter.className} min-h-screen px-10`}>
+      <body className={`${[syncopate.className, quickSand.className]}`}>
         {children}
       </body>
     </html>

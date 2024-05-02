@@ -67,12 +67,12 @@
 } */
 
 @layer base {
-  * {
+  :root {
     @apply box-border;
   }
 
   body {
-    @apply sm:bg-red-500 md:bg-blue-500 lg:bg-green-500 xl:bg-yellow-500;
+    @apply min-h-screen;
   }
 
   @media (prefers-color-scheme: dark) {

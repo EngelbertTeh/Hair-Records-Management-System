@@ -2,7 +2,7 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 
 const Index = () => {
   return (
-    <ScrollArea className="h-[200px] w-[350px]  border-x-1 mx-0 px-0">
+    <ScrollArea className="h-[200px] w-[350px]  border-x-1">
       <div className="my-[0.5px] ">
         Jokester began sneaking into the castle in the middle of the night and
       </div>
