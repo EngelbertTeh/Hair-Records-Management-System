@@ -80,3 +80,18 @@
     }
   }
 }
+
+@layer components {
+  .card {
+    & .brand {
+      @apply bg-red-500 center text-[22px] font-[var(--font-syncopate)];
+    }
+    & .header {
+      @apply center font-['--font-syncopate'];
+    }
+  }
+}
+
+.center {
+  @apply flex;
+}

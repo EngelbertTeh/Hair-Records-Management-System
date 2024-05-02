@@ -1,11 +1,15 @@
 import type { Metadata } from 'next';
-import { Quicksand, Syncopate } from 'next/font/google';
+
+import {
+  quickSandRegular,
+  quickSandSmBold,
+  syncopateBold,
+  syncopateRegular,
+} from '@/lib/fonts';
 import './globals.css';
 
-const quickSand = Quicksand({ subsets: ['latin'] });
-const syncopate = Syncopate({ weight: '400', subsets: ['latin'] });
 export const metadata: Metadata = {
-  title: 'Rimix',
+  title: 'RIMIX',
   description: '美发沙龙和学院',
 };
 
@@ -17,7 +21,14 @@ export default function RootLayout({
   //TODO: Understand NextFont
   return (
     <html lang="en">
-      <body className={`${[syncopate.className, quickSand.className]}`}>
+      <body
+        className={`${[
+          syncopateRegular.className,
+          syncopateBold.className,
+          quickSandRegular.className,
+          quickSandSmBold.className,
+        ]} `}
+      >
         {children}
       </body>
     </html>
