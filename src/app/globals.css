@@ -68,11 +68,31 @@
 
 @layer base {
   :root {
+    --primary: hsl(0, 0%, 100%);
+    --secondary: hsl(0, 0%, 86%);
+    --secondary-light-3: hsl(0, 0%, 86%, 0.3);
+    --secondary-light-5: hsl(0, 0%, 86%, 0.5);
+    --accent: hsl(0, 0%, 0%);
+    --accent-light-5: hsl(0, 0%, 0%, 0.5);
     @apply box-border;
   }
 
   body {
     @apply min-h-screen;
+  }
+
+  .body-text {
+    font-family: var(--font-quicksand-reg);
+    @apply text-[0.625rem];
+  }
+
+  .body-text-emp {
+    font-family: var(--font-quicksand-smbold);
+    @apply text-[0.625rem] font-semibold;
+  }
+
+  .fc {
+    @apply flex flex-col;
   }
 
   @media (prefers-color-scheme: dark) {
@@ -82,16 +102,43 @@
 }
 
 @layer components {
-  .card {
-    & .brand {
-      @apply bg-red-500 center text-[22px] font-[var(--font-syncopate)];
+  .card-container {
+    @apply min-h-full;
+
+    &.parent {
+      @apply min-h-screen;
+    }
+
+    &.gr3 {
+      @apply grid grid-rows-3;
+    }
+  }
+
+  .card,
+  .panel {
+    & .title {
+      font-family: var(--font-syncopate-bold);
+      @apply flex justify-center text-[1.375rem];
     }
     & .header {
-      @apply center font-['--font-syncopate'];
+      font-family: var(--font-syncopate-reg);
+      @apply flex justify-center text-[1rem];
+    }
+
+    & .searchbar {
+      font-family: var(--font-syncopate-reg);
+      @apply min-w-[80svw] lg:min-w-[33svw] flex px-2 bg-[var(--secondary-light-3)] rounded-[13px] h-[1.75rem]
+      body-text-emp text-[var(--accent-light-5)];
+
+      & input {
+        @apply bg-transparent flex-auto outline-none body-text-emp;
+      }
     }
   }
 }
 
-.center {
-  @apply flex;
+@layer utilities {
+  .panel {
+    @apply rounded-none border-r-0 border-l-0 border-t-0 border-b-[1px] border-[#dbdbdb];
+  }
 }

@@ -22,12 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${[
-          syncopateRegular.className,
-          syncopateBold.className,
-          quickSandRegular.className,
-          quickSandSmBold.className,
-        ]} `}
+        className={`${syncopateRegular.variable} ${syncopateBold.variable} ${quickSandRegular.variable} ${quickSandSmBold.variable}  `}
       >
         {children}
       </body>

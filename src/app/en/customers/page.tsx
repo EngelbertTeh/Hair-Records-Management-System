@@ -1,42 +1,27 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
-import { syncopateBold } from '@/lib/fonts';
-import { Fragment } from 'react';
+import SearchBar from '@/components/card/SearchBar';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export default function CustomerList() {
   return (
-    <Fragment>
-      <Card className="card">
-        <CardHeader>
-          <CardTitle className={`${syncopateBold.className}`}>
-            RIMIXabcde
-          </CardTitle>
-        </CardHeader>
-      </Card>
-      <Card className="card">
-        <CardHeader>
-          <CardTitle className="header">CUSTOMERS</CardTitle>
-          <CardDescription>Searchbar</CardDescription>
-        </CardHeader>
-      </Card>
-      <Card>
-        <CardHeader>
-          <CardTitle>Card Title</CardTitle>
-          <CardDescription>Card Description</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <p>Card Content</p>
-        </CardContent>
-        <CardFooter>
-          <p>Card Footer</p>
-        </CardFooter>
-      </Card>
-    </Fragment>
+    <div className="card-container parent gr3">
+      <div className="card-container fc row-span-1">
+        <Card className="panel">
+          <CardHeader>
+            <CardTitle className="title ">RIMIX</CardTitle>
+          </CardHeader>
+        </Card>
+        <Card className="panel fc flex-auto">
+          <CardHeader>
+            <CardTitle className="header ">CUSTOMERS</CardTitle>
+          </CardHeader>
+          <CardContent className="flex  justify-center">
+            <SearchBar className="searchbar" />
+          </CardContent>
+        </Card>
+      </div>
+      <div className=" card-container row-span-2">
+        <Card className="panel min-h-full">Somebody</Card>
+      </div>
+    </div>
   );
 }
