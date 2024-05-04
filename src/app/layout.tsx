@@ -1,11 +1,10 @@
-import type { Metadata } from 'next';
-
 import {
   quickSandRegular,
   quickSandSmBold,
   syncopateBold,
   syncopateRegular,
 } from '@/lib/fonts';
+import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -21,6 +20,9 @@ export default function RootLayout({
   //TODO: Understand NextFont
   return (
     <html lang="en">
+      <head>
+        <link rel="stylesheet" />
+      </head>
       <body
         className={`${syncopateRegular.variable} ${syncopateBold.variable} ${quickSandRegular.variable} ${quickSandSmBold.variable}  `}
       >
