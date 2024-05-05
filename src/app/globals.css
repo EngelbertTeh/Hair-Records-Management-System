@@ -106,13 +106,30 @@
     &.parent {
       @apply min-h-screen;
     }
-
+    /* this will apply shadow on the last child panel of the first group container, and will not apply shadow on the last child panel of subsequent group containers */
     &.parent > :first-child > :last-child {
-      @apply shadow-[0px_5px_5px_1px_rgba(0,0,0,0.2)];
+      @apply shadow-[0px_4px_4px_rgba(0,0,0,0.25)];
     }
 
     &.gr3 {
       @apply grid grid-rows-[215px_minmax(0,1fr)];
+    }
+  }
+
+  .navbar {
+    @apply p-4 relative flex  border-b-[1px] border-[#dbdbdb];
+
+    & .title {
+      font-family: var(--font-syncopate-bold);
+      @apply flex-1  text-center  text-[1.375rem];
+    }
+
+    & .abs-container {
+      @apply mb-1 absolute inset-0 z-10 flex px-4 justify-end;
+
+      & > :nth-child(1) {
+        @apply opacity-80;
+      }
     }
   }
 

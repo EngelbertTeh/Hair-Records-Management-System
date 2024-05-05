@@ -29,7 +29,6 @@ const SearchBar = ({ className }: { className?: string }) => {
         alt="Search icon"
         width={20}
         height={20}
-        priority
       />
       <input
         id="search"

@@ -1,14 +1,11 @@
-import SearchBar from '@/components/card/SearchBar';
+import Navbar from '@/components/component/Navbar';
+import SearchBar from '@/components/component/SearchBar';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 export default function CustomerList() {
   return (
     <div className="card-container parent gr3">
       <div className="card-container fc row-span-1">
-        <Card className="panel">
-          <CardHeader>
-            <CardTitle className="title ">RIMIX</CardTitle>
-          </CardHeader>
-        </Card>
+        <Navbar>RIMIX</Navbar>
         <Card className="panel fc flex-auto ">
           <CardHeader>
             <CardTitle className="header ">CUSTOMERS</CardTitle>
