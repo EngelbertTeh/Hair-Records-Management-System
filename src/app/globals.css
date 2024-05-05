@@ -103,13 +103,16 @@
 @layer components {
   .card-container {
     @apply min-h-full;
-
     &.parent {
       @apply min-h-screen;
     }
 
+    &.parent > :first-child > :last-child {
+      @apply shadow-[0px_5px_5px_1px_rgba(0,0,0,0.2)];
+    }
+
     &.gr3 {
-      @apply grid grid-rows-3;
+      @apply grid grid-rows-[215px_minmax(0,1fr)];
     }
   }
 
