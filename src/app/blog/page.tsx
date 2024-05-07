@@ -1,4 +1,4 @@
-import AppointmentCard from '@/components/card/AppointmentCard';
+import Appointment from '@/components/component/Appointment';
 import { getDomainURL } from '../../lib/getDomainURL';
 import BlogCard from './card';
 
@@ -20,7 +20,7 @@ export default async function Blog() {
     <main>
       <h1>Hello world</h1>
       <p>Posts: </p>
-      <AppointmentCard />
+      <Appointment />
       {setTimeout(() => {}, 3000) &&
         items &&
         items.map((item, idx) => {
