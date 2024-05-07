@@ -90,12 +90,8 @@
     @apply text-[0.625rem] font-semibold;
   }
 
-  .fc {
+  .fcol {
     @apply flex flex-col;
-  }
-
-  .gr3 {
-    @apply grid grid-rows-[215px_minmax(0,1fr)];
   }
 
   .gradient-blur {
@@ -116,8 +112,12 @@
 }
 
 @layer components {
-  .container {
-    @apply min-h-screen min-w-full;
+  .page {
+    @apply min-h-screen min-w-full grid  grid-rows-[215px_minmax(0,1fr)];
+
+    & .header {
+      @apply bg-[var(--primary)] bg-opacity-90 backdrop-filter backdrop-blur-md sticky top-0;
+    }
 
     /* this will apply shadow on the last child panel of the first group container, and will not apply shadow on the last child panel of subsequent group containers */
     & .header > :last-child {
@@ -131,7 +131,7 @@
       @apply border-t-[1px] border-[rgb(0,0,0,0.5)];
     }
   }
-  .card-container {
+  .page-content {
     @apply min-h-full;
   }
 
