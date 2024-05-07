@@ -20,9 +20,6 @@ export default function RootLayout({
   //TODO: Understand NextFont
   return (
     <html lang="en">
-      <head>
-        <link rel="stylesheet" />
-      </head>
       <body
         className={`${syncopateRegular.variable} ${syncopateBold.variable} ${quickSandRegular.variable} ${quickSandSmBold.variable}  `}
       >

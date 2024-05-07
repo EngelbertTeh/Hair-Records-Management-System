@@ -94,6 +94,21 @@
     @apply flex flex-col;
   }
 
+  .gr3 {
+    @apply grid grid-rows-[215px_minmax(0,1fr)];
+  }
+
+  .gradient-blur {
+    mask: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 10%,
+      rgba(0, 0, 0, 0.9) 70%,
+      rgba(0, 0, 0, 1) 100%
+    );
+
+    @apply h-[100px]  min-w-full backdrop-filter backdrop-blur-2xl backdrop-brightness-125 backdrop-opacity-95;
+  }
+
   @media (prefers-color-scheme: dark) {
     body {
     }
@@ -101,19 +116,23 @@
 }
 
 @layer components {
-  .card-container {
-    @apply min-h-full;
-    &.parent {
-      @apply min-h-screen;
-    }
+  .container {
+    @apply min-h-screen min-w-full;
+
     /* this will apply shadow on the last child panel of the first group container, and will not apply shadow on the last child panel of subsequent group containers */
-    &.parent > :first-child > :last-child {
+    & .header > :last-child {
       @apply shadow-[0px_4px_4px_rgba(0,0,0,0.25)];
     }
 
-    &.gr3 {
-      @apply grid grid-rows-[215px_minmax(0,1fr)];
+    & .body {
     }
+
+    & .footer {
+      @apply border-t-[1px] border-[rgb(0,0,0,0.5)];
+    }
+  }
+  .card-container {
+    @apply min-h-full;
   }
 
   .navbar {
