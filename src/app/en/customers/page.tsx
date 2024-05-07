@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 export default function CustomerList() {
   return (
     <div className="card-container parent gr3">
-      <div className="card-container fc row-span-1">
+      <div className="card-container fc sticky top-0    row-span-1 bg-white bg-opacity-90 backdrop-filter backdrop-blur-md">
         <Navbar>RIMIX</Navbar>
         <Card className="panel fc flex-auto ">
           <CardHeader>
@@ -15,7 +15,7 @@ export default function CustomerList() {
           </CardContent>
         </Card>
       </div>
-      <div className="card-container ">
+      <div className="card-container h-[1000px] ">
         <Card className="panel min-h-full">Somebody</Card>
       </div>
     </div>
