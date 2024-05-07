@@ -27,7 +27,7 @@ export default function CustomerList() {
         </Card>
       </div>
 
-      <div className="footer h-[150px] bg-white  w-full fixed bottom-0  backdrop-filter backdrop-blur-sm">
+      <div className="footer h-[10svh] bg-white  w-full fixed bottom-0  backdrop-filter backdrop-blur-sm">
         <div className="gradient-blur absolute bottom-[100%]"></div>
       </div>
     </div>
