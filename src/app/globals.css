@@ -106,7 +106,7 @@
       rgba(0, 0, 0, 1) 100%
     );
 
-    @apply h-[100px]  min-w-full backdrop-filter backdrop-blur-2xl backdrop-brightness-125 backdrop-opacity-95;
+    @apply h-[100px] bg-white border-b-[1px] border-[var(--secondary)] min-w-full backdrop-filter backdrop-blur-2xl backdrop-brightness-125 backdrop-opacity-95;
   }
 
   @media (prefers-color-scheme: dark) {
