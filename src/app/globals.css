@@ -80,7 +80,7 @@
     @apply min-h-screen;
   }
 
-  .body-text {
+  div:has(.nav-icons) .body-text {
     font-family: var(--font-quicksand-reg);
     @apply text-[0.625rem];
   }
@@ -113,7 +113,7 @@
 
 @layer components {
   .page {
-    @apply min-h-screen min-w-full grid  grid-rows-[215px_minmax(0,1fr)];
+    @apply min-h-screen min-w-full grid  grid-rows-[80px_minmax(0,1fr)];
 
     & .header {
       @apply bg-[var(--primary)] bg-opacity-90 backdrop-filter backdrop-blur-md sticky top-0;
@@ -136,15 +136,15 @@
   }
 
   .navbar {
-    @apply p-4 relative flex  border-b-[1px] border-[#dbdbdb];
+    @apply flex relative border-b-[1px] border-[#dbdbdb];
 
     & .title {
       font-family: var(--font-syncopate-bold);
-      @apply flex-1  text-center  text-[1.375rem];
+      @apply flex-auto flex justify-center items-center  text-[1.375rem];
     }
 
-    & .abs-container {
-      @apply mb-1 absolute inset-0 z-10 flex px-4 justify-end;
+    & .nav-icons {
+      @apply absolute inset-0 z-10 flex px-4 justify-end;
 
       & > :nth-child(1) {
         @apply opacity-80;

@@ -1,6 +1,6 @@
 import { ScrollArea } from '@/components/ui/scroll-area';
 
-const Index = () => {
+const Appointment = () => {
   return (
     <ScrollArea className="h-[200px] w-[350px]  border-x-1">
       <div className="my-[0.5px] ">
@@ -26,4 +26,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default Appointment;

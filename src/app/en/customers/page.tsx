@@ -4,8 +4,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 export default function CustomerList() {
   return (
     <div className="page">
+      <Navbar>RIMIX</Navbar>
       <div className="header fcol row-span-1">
-        <Navbar>RIMIX</Navbar>
         <Card className="panel fcol flex-auto">
           <CardHeader>
             <CardTitle className="header ">CUSTOMERS</CardTitle>
