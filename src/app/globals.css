@@ -1,8 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* @layer base {
+@layer base {
   :root {
+    --z-nav: 999;
+    --z-footer: 999;
+
     --background: 0, 0%, 86%;
     --foreground: 0, 0%, 100%;
 
@@ -12,8 +15,8 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
 
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -27,14 +30,14 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
+    --border: 210 40% 96.1%;
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
   }
 
-  .dark {
+  /* .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
 
@@ -62,19 +65,19 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
-  }
-} */
+  } */
+}
 
 @layer base {
-  :root {
-    --primary: hsl(0, 0%, 100%);
+  /* :root {
+    --primary: @apply bg-white;
     --secondary: hsl(0, 0%, 86%);
     --secondary-light-3: hsl(0, 0%, 86%, 0.3);
     --secondary-light-5: hsl(0, 0%, 86%, 0.5);
     --accent: hsl(0, 0%, 0%);
     --accent-light-5: hsl(0, 0%, 0%, 0.5);
     @apply box-border;
-  }
+  } */
 
   body {
     @apply min-h-screen;
@@ -116,7 +119,7 @@
     @apply min-h-screen min-w-full grid  grid-rows-[80px_minmax(0,1fr)];
 
     & .header {
-      @apply bg-[var(--primary)] bg-opacity-90 backdrop-filter backdrop-blur-md sticky top-0;
+      @apply bg-red-300 bg-opacity-90 backdrop-filter backdrop-blur-md  top-0;
     }
 
     /* this will apply shadow on the last child panel of the first group container, and will not apply shadow on the last child panel of subsequent group containers */
@@ -136,7 +139,7 @@
   }
 
   .navbar {
-    @apply flex relative border-b-[1px] border-[#dbdbdb];
+    @apply sticky bg-primary/90 top-0 flex  z-[--z-nav] backdrop-filter backdrop-blur-md border-b-[1px] border-borderClr;
 
     & .title {
       font-family: var(--font-syncopate-bold);
@@ -152,7 +155,9 @@
     }
   }
 
-  .card,
+  .card {
+    @apply rounded-lg border border-borderClr bg-card text-card-foreground shadow-sm;
+  }
   .panel {
     & .title {
       font-family: var(--font-syncopate-bold);
@@ -165,7 +170,7 @@
 
     & .searchbar {
       font-family: var(--font-syncopate-reg);
-      @apply min-w-[80svw] lg:min-w-[33svw] flex px-2 bg-[var(--secondary-light-3)] rounded-[13px] h-[1.75rem]
+      @apply min-w-[80svw] lg:min-w-[33svw] flex px-2 bg-secondary rounded-[13px] h-[1.75rem]
       body-text-emp text-[var(--accent-light-5)];
 
       & input {
@@ -177,6 +182,6 @@
 
 @layer utilities {
   .panel {
-    @apply rounded-none border-r-0 border-l-0 border-t-0 border-b-[1px] border-[#dbdbdb];
+    @apply rounded-none border-r-0 border-l-0 border-t-0 border-b-[1px] border-borderClr;
   }
 }

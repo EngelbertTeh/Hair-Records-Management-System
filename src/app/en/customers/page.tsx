@@ -1,30 +1,86 @@
 import Navbar from '@/components/component/Navbar';
 import SearchBar from '@/components/component/SearchBar';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card } from '@/components/ui/card';
 export default function CustomerList() {
   return (
     <div className="page">
       <Navbar>RIMIX</Navbar>
-      <div className="header fcol row-span-1">
-        <Card className="panel fcol flex-auto">
-          <CardHeader>
-            <CardTitle className="header ">CUSTOMERS</CardTitle>
-          </CardHeader>
-          <CardContent className="flex justify-center">
+      <div className="page-content h-full ">
+        <div className="panel fcol flex-auto">
+          <div>
+            <h1 className="header ">CUSTOMERS</h1>
+          </div>
+          <div className="flex justify-center">
             <SearchBar className="searchbar" />
-          </CardContent>
-        </Card>
-      </div>
-      <div className="page-content h-[500px] bg ">
-        <Card className="panel min-h-full flex flex-col justify-end">
-          Somebody Somebody Somebody Somebody Somebody Somebody Somebody
-          Somebody Somebody Somebody Somebody Somebody Somebody Somebody
-          Somebody Somebody Somebody Somebody Somebody Somebody Somebody
-          Somebody Somebody Somebody Somebody Somebody Somebody Somebody
-          Somebody Somebody Somebody Somebody Somebody Somebody Somebody
-          Somebody Somebody Somebody Somebody Somebody Somebody Somebody
-          Somebody Somebody Somebody Somebody
-        </Card>
+          </div>
+        </div>
+        <div
+          className="scroll-container p-2
+          h-full gap-2 flex flex-col items-center"
+        >
+          <Card className=" flex-col w-[200px]  flex  h-[200px]">
+            <p>Somebody</p>
+            <p>Somebody</p>
+            <p>Somebody</p>
+            <p>Somebody</p>
+            <p>Somebody</p>
+            <p>Somebody</p>
+            <p>Somebody</p>
+          </Card>
+          <Card className="flex-col w-[200px]  flex  h-[200px]">
+            <p>Somebody</p>
+            <p>Somebody</p>
+            <p>Somebody</p>
+            <p>Somebody</p>
+            <p>Somebody</p>
+            <p>Somebody</p>
+            <p>Somebody</p>
+          </Card>
+          <Card className="flex-col w-[200px]  flex  h-[200px]">
+            <p>Somebody</p>
+            <p>Somebody</p>
+            <p>Somebody</p>
+            <p>Somebody</p>
+            <p>Somebody</p>
+            <p>Somebody</p>
+            <p>Somebody</p>
+          </Card>
+          <Card className="flex-col w-[200px]  flex  h-[200px]">
+            <p>Somebody</p>
+            <p>Somebody</p>
+            <p>Somebody</p>
+            <p>Somebody</p>
+            <p>Somebody</p>
+            <p>Somebody</p>
+            <p>Somebody</p>
+          </Card>
+          <Card className="flex-col w-[200px]  flex  h-[200px]">
+            <p>Somebody</p>
+            <p>Somebody</p>
+            <p>Somebody</p>
+            <p>Somebody</p>
+            <p>Somebody</p>
+            <p>Somebody</p>
+            <p>Somebody</p>
+          </Card>
+          <Card className="flex-col w-[200px]  flex  h-[200px]">
+            <p>Somebody</p>
+            <p>Somebody</p>
+            <p>Somebody</p>
+            <p>Somebody</p>
+            <p>Somebody</p>
+            <p>Somebody</p>
+            <p>Somebody</p>
+          </Card>
+          <Card className="flex-col w-[200px]  flex  h-[200px]">
+            <p>Somebody</p>
+            <p>Somebody</p>
+            <p>Somebody</p>
+            <p>Somebody</p>
+            <p>Somebody</p>
+            <p>Somebody</p>
+          </Card>
+        </div>
       </div>
 
       <div className="footer h-[10svh] bg-white  w-full fixed bottom-0  backdrop-filter backdrop-blur-sm">
