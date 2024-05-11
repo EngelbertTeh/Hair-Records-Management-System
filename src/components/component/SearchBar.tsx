@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import React, { useState } from 'react';
-const SearchBar = ({ className }: { className?: string }) => {
+const SearchBar = () => {
   const [results, setResults] = useState<JSON | undefined>(undefined);
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -22,7 +22,7 @@ const SearchBar = ({ className }: { className?: string }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className={`${className}`}>
+    <form onSubmit={handleSubmit} className="searchbar">
       <Image
         className="bg-transparent mr-3"
         src="/search.svg"

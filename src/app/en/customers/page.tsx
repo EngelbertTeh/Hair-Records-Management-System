@@ -1,19 +1,18 @@
+import Footer from '@/components/component/Footer';
 import Navbar from '@/components/component/Navbar';
+import Page from '@/components/component/Page';
+import PageContent from '@/components/component/PageContent';
+import Panel from '@/components/component/Panel';
 import SearchBar from '@/components/component/SearchBar';
 import { Card } from '@/components/ui/card';
 export default function CustomerList() {
   return (
-    <div className="page">
+    <Page>
       <Navbar>RIMIX</Navbar>
-      <div className="page-content h-full ">
-        <div className="panel fcol flex-auto">
-          <div>
-            <h1 className="header ">CUSTOMERS</h1>
-          </div>
-          <div className="flex justify-center">
-            <SearchBar className="searchbar" />
-          </div>
-        </div>
+      <PageContent>
+        <Panel props={{ title: 'CUSTOMERS' }} shadow={true}>
+          <SearchBar />
+        </Panel>
         <div
           className="scroll-container p-2
           h-full gap-2 flex flex-col items-center"
@@ -81,11 +80,8 @@ export default function CustomerList() {
             <p>Somebody</p>
           </Card>
         </div>
-      </div>
-
-      <div className="footer h-[10svh] bg-white  w-full fixed bottom-0  backdrop-filter backdrop-blur-sm">
-        <div className="gradient-blur absolute bottom-[100%]"></div>
-      </div>
-    </div>
+      </PageContent>
+      <Footer />
+    </Page>
   );
 }

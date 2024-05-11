@@ -116,53 +116,40 @@
 
 @layer components {
   .page {
-    @apply min-h-screen min-w-full grid  grid-rows-[80px_minmax(0,1fr)];
+    @apply min-h-screen min-w-full grid  grid-rows-[65px_minmax(0,1fr)];
 
-    & .header {
-      @apply bg-red-300 bg-opacity-90 backdrop-filter backdrop-blur-md  top-0;
+    & .navbar {
+      @apply sticky bg-primary/90 top-0 flex  z-[--z-nav] backdrop-filter backdrop-blur-md border-b-[1px] border-borderClr;
+
+      & .title {
+        font-family: var(--font-syncopate-bold);
+        @apply flex-auto flex justify-center items-center  text-[1.375rem];
+      }
+
+      & .nav-icons {
+        @apply absolute inset-0 z-10 flex px-4 justify-end;
+
+        & > :nth-child(1) {
+          @apply opacity-80;
+        }
+      }
     }
 
-    /* this will apply shadow on the last child panel of the first group container, and will not apply shadow on the last child panel of subsequent group containers */
-    & .header > :last-child {
-      @apply shadow-[0px_4px_4px_rgba(0,0,0,0.25)];
-    }
-
-    & .body {
+    & .page-content {
+      @apply min-h-full;
     }
 
     & .footer {
       @apply border-t-[1px] border-[rgb(0,0,0,0.5)];
     }
   }
-  .page-content {
-    @apply min-h-full;
-  }
-
-  .navbar {
-    @apply sticky bg-primary/90 top-0 flex  z-[--z-nav] backdrop-filter backdrop-blur-md border-b-[1px] border-borderClr;
-
-    & .title {
-      font-family: var(--font-syncopate-bold);
-      @apply flex-auto flex justify-center items-center  text-[1.375rem];
-    }
-
-    & .nav-icons {
-      @apply absolute inset-0 z-10 flex px-4 justify-end;
-
-      & > :nth-child(1) {
-        @apply opacity-80;
-      }
-    }
-  }
 
   .card {
     @apply rounded-lg border border-borderClr bg-card text-card-foreground shadow-sm;
   }
+
   .panel {
-    & .title {
-      font-family: var(--font-syncopate-bold);
-      @apply flex justify-center text-[1.375rem];
-    }
+    @apply flex flex-col gap-3 p-6 pt-4  flex-auto rounded-none border-r-0 border-l-0 border-t-0 border-b-[1px] border-borderClr;
     & .header {
       font-family: var(--font-syncopate-reg);
       @apply flex justify-center text-[1rem];
@@ -170,18 +157,12 @@
 
     & .searchbar {
       font-family: var(--font-syncopate-reg);
-      @apply min-w-[80svw] lg:min-w-[33svw] flex px-2 bg-secondary rounded-[13px] h-[1.75rem]
+      @apply bg-red-500 min-w-[80svw] lg:min-w-[33svw] flex px-2 bg-secondary rounded-[13px] h-[1.75rem]
       body-text-emp text-[var(--accent-light-5)];
 
       & input {
         @apply bg-transparent flex-auto outline-none body-text-emp;
       }
     }
-  }
-}
-
-@layer utilities {
-  .panel {
-    @apply rounded-none border-r-0 border-l-0 border-t-0 border-b-[1px] border-borderClr;
   }
 }
