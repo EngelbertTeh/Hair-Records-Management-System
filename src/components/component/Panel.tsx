@@ -3,7 +3,7 @@ export default function Panel({
   children,
   shadow = false,
 }: {
-  props: { title: string };
+  props: { title: string; parent?: any };
   children?: React.ReactNode;
   shadow?: boolean;
 }) {
