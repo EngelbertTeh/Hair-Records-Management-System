@@ -10,9 +10,11 @@ import { linksTable } from './schema';
 
 config({ path: '.env.local' }); // ensures env variables are loaded from .env.local
 
-const dbcs = process.env.DATABASE_URL;
+
+const dbcs = process.env.DATABASE_ URL;
 const sql = neon(dbcs || '');
 const db = drizzle(sql);
+
 
 export async function addLink(url: string) {
   const short = randomShortStrings();

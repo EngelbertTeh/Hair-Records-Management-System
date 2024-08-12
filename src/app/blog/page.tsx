@@ -1,7 +1,7 @@
 import Appointment from '@/components/component/Appointment';
 import { getDomainURL } from '../../lib/getDomainURL';
 import BlogCard from './card';
-
+//test
 async function getData() {
   const domain = getDomainURL();
   const endpoint = `${domain}/api/posts/`;

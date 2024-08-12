@@ -11,4 +11,5 @@ export default async function ShortPage({
   const { url } = record;
   if (!short || !record || !url) notFound();
   redirect(url, RedirectType.push);
+  //test
 }

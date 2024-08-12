@@ -22,7 +22,7 @@ export async function POST(req: NextRequest) {
   const data = await req.json();
   data.url = data.url.trim().toLowerCase();
   const url: string = data?.url;
-
+//test
   const isValid =
     url && (await isValidURL(url, [process.env.NEXT_PUBLIC_VERCEL_ENV!]));
   if (!isValid) {

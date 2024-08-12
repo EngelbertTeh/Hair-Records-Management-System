@@ -17,7 +17,7 @@ import {
   variableKeyTable,
   whiteHairSaturationEnum,
 } from './schema';
-
+//test
 config({ path: '.env.local' });
 
 const dbcs = process.env.DATABASE_URL;
